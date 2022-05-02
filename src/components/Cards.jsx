@@ -13,3 +13,4 @@ export default function Cards({cities}) {
                 onClose={() => alert(citi.name)} />))};
     </div>)
 };
+
