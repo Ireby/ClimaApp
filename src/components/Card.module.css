@@ -1,6 +1,7 @@
 
 
 .card{
+    background:linear-gradient(0deg, rgb(18, 116, 191) 0%, rgb(255, 243, 216),rgb(255, 255, 255) 100%);
     border-style: solid;
     border-width: 1px;
     border-color: black;
@@ -29,10 +30,11 @@
     background: linear-gradient(0deg, rgba(89,11,11,1) 0%, rgba(253,45,45,1) 100%);
     font-size: 0.75rem;
     color: white;
-    border: solid;
-    border-radius: 0.1px
-    
+    border-radius: 0.1px; 
+    border:none;
 }
+/*  border: solid;
+    border-radius: 0.1px */
 .closeButton:hover{
     position: absolute;/*relativo al elemto padre */
     right: 0.5rem;
