@@ -1,0 +1,40 @@
+.search{
+        display: flex;
+        
+    flex-direction: row;
+    justify-content: end
+
+}
+
+.search > input {
+   
+    padding: 0.25rem 4rem 0.25rem 0.25rem;
+    font-size: 1rem;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    border-color: black;
+}
+.search > button {
+   
+  display: inline-block;
+
+    top: 0.2rem;
+    right: 0.2rem;
+    border-radius: 0.5rem;
+    color: rgb(41, 34, 5);
+    font-size: 0.9rem;
+    font-weight:bold;
+    background: linear-gradient(0deg, rgb(97, 223, 232) 0%,rgb(227, 242, 243) 0%, rgb(19, 136, 200) 100%);
+    border-radius: 4rem
+}
+.search > button:hover {
+    color: #ffffff;
+    background-color: #198754;
+  }
+.search > input::placeholder{
+    font-weight: 300;
+    font-size:1.25 rem;
+    
+}

@@ -1,0 +1,10 @@
+.cards{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+@media (min-width: 576px){
+ .cards{
+ flex-direction: row;
+ justify-content: center;}
+}

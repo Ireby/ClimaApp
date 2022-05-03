@@ -1,6 +1,9 @@
 import React from 'react';
 import CardTemp from './CardTemp';
 import PropTypes from 'prop-types';
+import styles from './Card.module.css';
+
+//----------------code---------
 export default function Card({max,min,name,img,onClose}) {
 //`http://openweathermap.org/img/wn/${img}@2x.png` icon
 //veo una card, un botón, un title label & value x2 and img  
@@ -8,11 +11,11 @@ function handleOnClose(){
  if(typeof onClose === 'function'){onClose()}}
 //evita que haga algo si me equivoco al enviar un tipo de dato
 //creo el cuerpo del html
-return (<div> 
-  <button onClick={handleOnClose}>x</button>
-  <span>{name}</span>
-  <CardTemp label='Min' value={min}/>
-  <CardTemp label='Max' value={max}/>
+return (<div className={styles.card}> 
+  <button className={styles.closeButton} onClick={handleOnClose} >X</button>
+  <span className={styles.cityName}>{name}</span>
+  <CardTemp  label='Min' value={min + 'º'}/>
+  <CardTemp label='Max' value={max +'º'}/>
   <img src={`http://openweathermap.org/img/wn/${img}@2x.png`} alt="clima icon"/>
   </div>)
 };
