@@ -1,0 +1,54 @@
+
+
+.card{
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 0.5rem;
+
+   display: grid;    /*repite 3 columna de una misma fraccion */
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 1fr 1fr;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+  align-items: center;
+    position: relative;
+   
+}
+.cityName{ /*inicia en la primer columna y se expande */
+    grid-column: 1 /span 3;
+    font-weight:700 ;
+    font-size: 1.2em;
+}
+.closeButton{
+    position: absolute;/*relativo al elemto padre */
+    right: 0.5rem;
+    top: 0.5rem;
+    
+    background: rgb(89,11,11);
+    background: linear-gradient(0deg, rgba(89,11,11,1) 0%, rgba(253,45,45,1) 100%);
+    font-size: 0.75rem;
+    color: white;
+    border: solid;
+    border-radius: 0.1px
+    
+}
+.closeButton:hover{
+    position: absolute;/*relativo al elemto padre */
+    right: 0.5rem;
+    top: 0.5rem;
+    
+    background: rgb(184, 9, 9);
+    
+    font-size: 0.75rem;
+    color: white;
+    border: solid;
+    border-color: rgba(108, 7, 7, 0.985);
+    border-radius: 4rem
+    
+}
+@media screen and (min-width: 576px){
+    .card{
+    width: 25rem;
+   
+} }
