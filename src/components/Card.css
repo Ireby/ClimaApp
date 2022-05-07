@@ -1,0 +1,63 @@
+.card {
+  display: flex;
+  border-color: rgb(237, 82, 222);
+  margin: 20px;
+    width: 18rem;
+   border: 1px solid;
+      background-color: rgba(244, 245, 238, 0.196);  
+    text-decoration: none;
+    border-radius: 10px;
+  }
+  .card:hover{
+    opacity: 0.8;
+    background-image: url('https://i0.hippopx.com/photos/276/382/508/watercolour-texture-watercolor-abstract-preview.jpg')
+  }
+  
+  .card-title {
+    margin-top: 1px ;
+    margin-bottom: 1px;
+    text-decoration: none;
+    font-family: 'cursive';
+    color:rgb(102, 79, 94);
+    font-size: 2rem;
+    text-shadow: 0 1px 0 rgba(255, 255, 255,);
+  }
+  
+  a:link, a:visited, a:active {
+    text-decoration:none;
+  } 
+  
+  
+  .scard{
+    color: #ffffff;
+    font-family: 'cursive';
+    font-size: 1.2rem;
+    margin-top: 1px ;
+    padding-top:1px;
+  }
+  
+  .Button{
+    position: absolute;/*relativo al elemto padre */
+    right: 0.5rem;
+    top: 0.5rem;
+     background: rgb(224, 46, 46);
+    
+    font-size: 0.7rem;
+    color: white;
+    border-radius: 10px; 
+    border:none;
+}
+/*  border: solid;
+    border-radius: 0.1px */
+.Button:hover{
+    position: absolute;/*relativo al elemto padre */
+    right: 0.5rem;
+    top: 0.5rem;
+     background: rgb(184, 9, 9);
+    font-size: 0.75rem;
+    color: white;
+    border: solid;
+    border-color: rgba(108, 7, 7, 0.985);
+    border-radius: 4rem
+    
+}

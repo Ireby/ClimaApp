@@ -1,0 +1,44 @@
+.abot{
+    color:rgb(139, 6, 227);
+    font-family: 'Comic Sans', 'Comic Sans MS','cursive;';
+}
+.sob{
+    
+    background-color: rgba(196, 80, 232, 0.362); 
+     width: 40rem;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+}
+
+
+.texto{
+    top:5px;
+    color: white;
+    display: contents;
+
+    font-family: 'roboto';
+    font-size: 1.5rem;
+}
+.fond{
+    color: rgb(239, 198, 13);
+   background-image: url('https://www.teahub.io/photos/full/257-2579289_wallpaper-stains-purple-gradient-colorful-purple-gradient-wallpaper.jpg');
+    
+   border-radius: 10px;
+    font-weight: bold;
+}
+.d{
+   font-family: 'georgia';
+    
+    display: inline-table;
+    border-radius: 10px;
+}
+.img{
+    
+    width: 1.7rem;
+}
+
+.d2{
+    border-radius: 10px;
+    background-image: url('https://www.teahub.io/photos/full/257-2579289_wallpaper-stains-purple-gradient-colorful-purple-gradient-wallpaper.jpg');
+}

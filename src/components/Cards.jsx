@@ -1,17 +1,25 @@
 import React from 'react';
-import Card from './Card';
-import styles from './Cards.module.css';
-export default function Cards({cities}) {
-  // acá va tu código
-  // tip, podés usar un map
-  return (<div className={styles.cards}>
-     {cities.map((citi) =>( <Card  
-                key={citi.id}
-                min={citi.main.temp_min} 
-                max={citi.main.temp_max} 
-                name={citi.name} 
-                img={citi.weather[0].icon} 
-                onClose={() => alert(citi.name)} />))};
-    </div>)
-};
+import  './Cards.css';
 
+import Card from './Card.jsx';
+import { Link } from "react-router-dom";
+export default function Cards({cities, onClose,id}) {
+  if(cities){
+    return (
+      <div className="cards">
+        {cities.map(c => <Card
+            max={c.max}
+            min={c.min}
+            name={c.name}
+            img={c.img}
+            onClose={() => onClose(c.id)}
+            id={c.id}
+          
+          /> )}
+          <Link  to="/">
+                 <img width={50} position="absolute "  src="https://upload.wikimedia.org/wikipedia/commons/2/27/1328101938_Arrow-Right.png"/>
+               </Link>
+      </div>
+    );
+  }
+}

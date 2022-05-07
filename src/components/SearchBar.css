@@ -1,0 +1,13 @@
+.busqueda{
+border-bottom: 10px solid ;
+border-color: rgba(208, 224, 222, 0.705); 
+  background-color: rgba(208, 224, 222, 0.705); 
+  border-radius: 3px;
+}
+
+.btn{
+  color: whitesmoke;
+  border: 0.1px solid rgb(236, 237, 245);
+}
+.btn:hover{
+  background-color: rgb(248, 221, 18);}

@@ -1,28 +1,77 @@
-import React from 'react';
-import './App.css';
-//import Card from './components/Card.jsx';
-import Cards from './components/Cards.jsx';
-import SearchBar from './components/SearchBar.jsx';
-//import data, { Cairns } from './data.js';
-import data from './data.js';
+import React, { useState } from "react";
+import "./App.css";
+import Nav from "./components/Nav.jsx";
+import Cards from "./components/Cards.jsx";
+import Ciudad from "./components/Ciudad.jsx";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import About from "./components/About";
+
 function App() {
+  const [cities, setCities] = useState([]);
+  const apiKey = "c170e58fb664eca0034348c8a285eb15";
+
+  function onSearch(ciudad) {
+    fetch(
+      `http://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}&units=metric&lang={sp, es}`
+    )
+      .then((r) => r.json())
+      .then((recurso) => {
+        if (recurso.main !== undefined) {
+          const ciudad = {
+            min: Math.round(recurso.main.temp_min),
+            max: Math.round(recurso.main.temp_max),
+            img: recurso.weather[0].icon,
+            id: recurso.id,
+            wind: recurso.wind.speed,
+            temp: recurso.main.temp,
+            name: recurso.name,
+            weather: recurso.weather[0].main,
+            clouds: recurso.clouds.all,
+            latitud: recurso.coord.lat,
+            longitud: recurso.coord.lon,
+            sys:recurso.sys.country,
+            rain:recurso.rain,
+            time:recurso.timezone,
+            
+          };
+          setCities((oldCities) => [...oldCities, ciudad]);
+        } else {
+          alert("Ciudad no encontrada");
+        }
+      });
+  }
+  function onFilter(ciudadId) {
+    let ciudad = cities.filter((c) => c.id === parseInt(ciudadId));
+    if (ciudad.length > 0) {
+      return ciudad[0];
+    } else {
+      return null;
+    }
+  }
+
+  function onClose(id) {
+    setCities((oldCities) => oldCities.filter((c) => c.id !== id));
+  }
+
   return (
     <div className="App">
-       <div>
-        <SearchBar
-          onSearch={(ciudad) => alert(ciudad)}
-        />
-      </div>
-      <hr />
-      <div>
-        <Cards
-          cities={data}
-        />
-      </div>
-      <hr />
-     
+      
+      <Route path="/" render={() => <Nav onSearch={onSearch} />} />
+
+      <Route
+        path="/"
+        render={() => <Cards cities={cities} onClose={onClose} />}
+      />
+      <Route path="/about" render={()=> <About/>} />
+      <Route
+        exact
+        path="/ciudad/:ciudadId"
+        render={({ match }) => (
+          <Ciudad city={onFilter(match.params.ciudadId)} />
+        )}
+      />
+
     </div>
   );
 }
-
 export default App;

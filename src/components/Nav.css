@@ -1,0 +1,25 @@
+.ns{
+    top: 3px;
+    display: flex;
+     flex-direction: row;
+    justify-content: space-between;
+    background-color: rgba(221, 22, 191, 0.186); 
+    background-repeat: no-repeat;
+   border: 5px solid;
+   border-color: rgba(244, 184, 235, 0.186); 
+  }
+
+
+
+
+a {
+    margin-top: 4px ;
+    padding: 4px ;
+    color: rgb(224, 238, 210);
+    font-family: 'Garamond';
+    font-size: 1.12rem;
+    font-weight: bold;
+  }
+  a:hover {
+     color: rgb(240, 99, 11)
+  }
