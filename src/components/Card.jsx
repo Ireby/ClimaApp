@@ -1,35 +1,34 @@
-import React from 'react';
-import CardTemp from './CardTemp';
-import PropTypes from 'prop-types';
-import styles from './Card.module.css';
+import React from "react";
+import "./Card.css";
+import { Link } from "react-router-dom";
 
-//----------------code---------
-export default function Card({max,min,name,img,onClose}) {
-//`http://openweathermap.org/img/wn/${img}@2x.png` icon
-//veo una card, un botón, un title label & value x2 and img  
-function handleOnClose(){
- if(typeof onClose === 'function'){onClose()}}
-//evita que haga algo si me equivoco al enviar un tipo de dato
-//creo el cuerpo del html
-return (<div className={styles.card}> 
-  <button className={styles.closeButton} onClick={handleOnClose} >X</button>
-  <span className={styles.cityName}>{name}</span>
-  <CardTemp  label='Min' value={min + 'º'}/>
-  <CardTemp label='Max' value={max +'º'}/>
-  <img src={`http://openweathermap.org/img/wn/${img}@2x.png`} alt="clima icon"/>
-  </div>)
-};
-Card.propTypes ={
-  min: PropTypes.number,
-  max: PropTypes.number,
-  name: PropTypes.string,
-  img: PropTypes.string,
-  onClose: PropTypes.func,
+export default function Card({ min, max, name, img, onClose, id }) {
+  return (
+    <Link to={`/ciudad/${id}`}><div className="card">
+   
+        <button onClick={onClose} className="Button">X</button>
+   
+      <div className='scard'>
+        
+          <h5 className="card-title">{name}</h5>
+        <div className="row">
+          <div className="col-sm-4 col-md-4 col-lg-4">
+            <p>Min</p>
+            <p>{min}°C</p>
+          </div>
+          <div className="col-sm-4 col-md-4 col-lg-4">
+            <p>Max</p>
+            <p>{max}°C</p>
+          </div>
+          <div className="col-sm-4 col-md-4 col-lg-4">
+            <img alt="icon" src={`http://openweathermap.org/img/wn/${img}@2x.png`}/>
+          </div>
+        </div>
+      </div>
+    </div>
+    </Link>
+  );
 }
-
-
-
-
 
 
 
