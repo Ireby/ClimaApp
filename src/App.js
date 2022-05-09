@@ -9,10 +9,10 @@ import About from "./components/About";
 function App() {
   const [cities, setCities] = useState([]);
   const apiKey = "c170e58fb664eca0034348c8a285eb15";
-
+//&lang={sp, es}
   function onSearch(ciudad) {
     fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}&units=metric&lang={sp, es}`
+      `http://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}&units=metric`
     )
       .then((r) => r.json())
       .then((recurso) => {
