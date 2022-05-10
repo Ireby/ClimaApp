@@ -8,7 +8,7 @@ import About from "./components/About";
 
 function App() {
   const [cities, setCities] = useState([]);
-  const apiKey = "c170e58fb664eca0034348c8a285eb15";
+  const apiKey = "d72852741c3748639df5ece33169bc2b";
 //&lang={sp, es}
   function onSearch(ciudad) {
     fetch(
